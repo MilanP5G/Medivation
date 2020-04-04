@@ -8,10 +8,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    if Helpers.logged_in?(session)
+      user = Helpers.current_user(session)
+      redirect '/posts/posts'
+    end
     erb :index
   end
-
-  
 
 
 end
