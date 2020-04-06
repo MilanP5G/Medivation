@@ -1,1 +1,15 @@
 <h2><%= @user.username %></h2>
+
+<a href="/posts/compose_post"><button id="compose">Post</button></a><br>
+
+<% if Helpers.current_user(session) == @user %>
+
+<a href="/users/<%=@user.id%>/edit"><button id="edit">Edit Profile</button></a>
+
+<form href="/profile" method="post">
+<input type="hidden" name="id" value="<%=@user.id%>">
+<input type="hidden" name="_method" value="delete">
+<input id="delete" type="submit" value="Delete Profile">
+</form>
+
+<% end %>

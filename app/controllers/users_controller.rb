@@ -42,5 +42,14 @@ class UsersController < ApplicationController
     erb :'/users/profile'
  end
 
+ delete '/profile' do
+   user = User.find_by(id: params[:id])
+   if user == Helpers.current_user(session)
+     user.destroy
+     session.clear
+   end
+   redirect '/'
+ end 
+
 
 end
