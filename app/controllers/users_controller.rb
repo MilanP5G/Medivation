@@ -34,12 +34,25 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
+
   get '/profile' do
     if !Helpers.logged_in?(session)
       redirect '/login'
     end
      @user = Helpers.current_user(session)
     erb :'/users/profile'
+ end
+
+ get '/logout' do
+   if Helpers.logged_in?(session)
+     session.clear
+     redirect to '/login'
+   end
+     redirect to '/'
+ end
+
+ post '/logout' do
+   redirect '/'
  end
 
  delete '/profile' do
@@ -49,7 +62,7 @@ class UsersController < ApplicationController
      session.clear
    end
    redirect '/'
- end 
+ end
 
 
 end

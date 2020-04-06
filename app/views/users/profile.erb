@@ -4,7 +4,9 @@
 
 <% if Helpers.current_user(session) == @user %>
 
-<a href="/users/<%=@user.id%>/edit"><button id="edit">Edit Profile</button></a>
+<a href="/users/<%=@user.id%>/edit"><button id="edit">Edit Profile</button></a><br>
+
+<a href="/logout"><button id="logout">Log out</button></a><br>
 
 <form href="/profile" method="post">
 <input type="hidden" name="id" value="<%=@user.id%>">
