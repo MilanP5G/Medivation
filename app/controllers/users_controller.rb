@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    user = User.find_by(username: params[:username]) || User.find_by(email: params[:email])
+    user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect '/profile'
@@ -34,12 +34,12 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
-
   get '/profile' do
     if !Helpers.logged_in?(session)
       redirect '/login'
     end
      @user = Helpers.current_user(session)
+     @posts = Post.all
     erb :'/users/profile'
  end
 
@@ -51,8 +51,15 @@ class UsersController < ApplicationController
      redirect to '/'
  end
 
- post '/logout' do
-   redirect '/'
+ get '/user/:id' do
+   if Helpers.logged_in?(session) && User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
+    @posts = @user.posts
+    else
+      redirect to '/'
+    end
+    erb :'users/show'
+  end
  end
 
  delete '/profile' do

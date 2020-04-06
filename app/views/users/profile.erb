@@ -1,10 +1,12 @@
+<h1>Profile Settings</h1>
+
 <h2><%= @user.username %></h2>
 
-<a href="/posts/compose_post"><button id="compose">Post</button></a><br>
+<h3>Posts: <%= @posts.all.count %></h3>
 
 <% if Helpers.current_user(session) == @user %>
 
-<a href="/users/<%=@user.id%>/edit"><button id="edit">Edit Profile</button></a><br>
+<a href="/users/<%= @user.id %>/edit"><button id="edit">Edit Profile</button></a><br>
 
 <a href="/logout"><button id="logout">Log out</button></a><br>
 
