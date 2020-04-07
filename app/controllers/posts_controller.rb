@@ -1,8 +1,14 @@
 class PostsController < ApplicationController
 
-  get '/posts' do
-    @posts = Posts.all
-    erb :'/posts/index'
+  get '/compose' do
+    if !Helpers.logged_in?(session)
+      redirect '/'
+    end
+    erb :'/posts/compose'
+  end
+
+  post '/compose' do
+    
   end
 
 

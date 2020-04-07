@@ -58,14 +58,33 @@ class UsersController < ApplicationController
      redirect to '/'
  end
 
+
  get '/user/:id' do
-   if Helpers.logged_in?(session) && User.find(id: params["id"])
-    @user = User.find(id: params["id"])
+   if Helpers.logged_in?(session) && User.find_by(id: params["id"])
+    @user = User.find_by(id: params["id"])
     @posts = @user.posts
     else
       redirect '/'
     end
     erb :'/users/show'
+  end
+
+  get '/users/:id/edit' do
+    @user = User.find_by(id: params["id"])
+    if !Helpers.logged_in?(session) || @user != Helpers.current_user(session)
+      redirect '/'
+    end
+    erb :'/users/edit'
+  end
+
+  patch '/users/:id' do
+    user = User.find_by(id: params["id"])
+    if user == Helpers.current_user(session)
+      user.update(params[:user])
+      redirect "/settings"
+    else
+      redirect "/home"
+    end
   end
 
  delete '/settings' do
