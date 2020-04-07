@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/signup' do
     if Helpers.logged_in?(session)
-      redirect '/profile'
+      redirect '/home'
     end
       erb :'users/create_user'
   end
@@ -15,12 +15,12 @@ class UsersController < ApplicationController
     end
     user = User.create(username: params[:username], email: params[:email], password: params[:password])
     session[:user_id] = user.id
-    redirect '/profile'
+    redirect '/home'
   end
 
   get '/login' do
     if Helpers.logged_in?(session)
-      redirect '/profile'
+      redirect '/home'
     end
       erb :'/users/login'
   end
@@ -29,18 +29,25 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/profile'
+      redirect '/home'
     end
     redirect '/login'
   end
 
-  get '/profile' do
+  get '/home' do
+    if !Helpers.logged_in?(session)
+      redirect '/login'
+    end
+     @users = User.all
+    erb :home
+  end
+
+  get '/settings' do
     if !Helpers.logged_in?(session)
       redirect '/login'
     end
      @user = Helpers.current_user(session)
-     @posts = Post.all
-    erb :'/users/profile'
+    erb :'/users/profile_settings'
  end
 
  get '/logout' do
@@ -52,17 +59,16 @@ class UsersController < ApplicationController
  end
 
  get '/user/:id' do
-   if Helpers.logged_in?(session) && User.find_by(id: params[:id])
-    @user = User.find_by(id: params[:id])
+   if Helpers.logged_in?(session) && User.find(id: params["id"])
+    @user = User.find(id: params["id"])
     @posts = @user.posts
     else
-      redirect to '/'
+      redirect '/'
     end
-    erb :'users/show'
+    erb :'/users/show'
   end
- end
 
- delete '/profile' do
+ delete '/settings' do
    user = User.find_by(id: params[:id])
    if user == Helpers.current_user(session)
      user.destroy

@@ -1,1 +1,13 @@
+<h1><%= @user.username %></h1>
 
+<h2>My posts</h2>
+
+<ul>
+  <% @posts.each do | post | %>
+  <li>
+  <p><b><%= post.title %></b></p>
+  <p><%= post.content %></p>
+  </li>
+  <% end %>
+
+</ul>
