@@ -11,6 +11,11 @@
   <% @users.each do | user | %>
   <li>
   <p><b><%= user.username %></b></p>
+    <% user.posts.each do | post | %>
+    <p><em><%= post.title %></em></p>
+    <p><%= post.content %></p>
+  </li>
+  <% end %>
   <% end %>
 
 </ul>
