@@ -39,6 +39,7 @@ class UsersController < ApplicationController
       redirect '/login'
     end
      @users = User.all
+     @user = Helpers.current_user(session)
     erb :home
   end
 
@@ -62,6 +63,7 @@ class UsersController < ApplicationController
  get '/user/:id' do
    if Helpers.logged_in?(session) && User.find_by(id: params["id"])
     @user = User.find_by(id: params["id"])
+    @post = Post.find_by(id: params["id"])
     @posts = @user.posts
     else
       redirect '/'
