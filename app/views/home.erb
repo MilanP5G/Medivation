@@ -8,10 +8,9 @@
 <a href="/compose"><button>Compose</button></a>
 
 <ul>
-  <% @users.all do | user | %>
+  <% @users.each do | user | %>
   <li>
   <p><b><%= user.username %></b></p>
-  </li>
   <% end %>
 
 </ul>

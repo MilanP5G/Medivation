@@ -40,6 +40,7 @@ class UsersController < ApplicationController
     end
      @users = User.all
      @user = Helpers.current_user(session)
+     @posts = Post.all
     erb :home
   end
 
