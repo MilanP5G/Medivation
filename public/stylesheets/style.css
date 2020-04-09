@@ -17,11 +17,11 @@ body {
 .logo {
   background-image: url("/images/Medivation_Logo.png");
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   margin: auto;
   background-position: center;
-  background-size: 100px;
+  background-size: 200px;
   background-repeat: no-repeat;
 }
 .login-div {
