@@ -1,6 +1,19 @@
-<a href="/user/<%= @user.id %>">Profile</a>
-
-<a href="/settings">Account Settings</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+  </head>
+  <body>
+    <div class="home-div">
+      <div class="header">
+        <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+        <div class="header-right">
+          <div class="profile-button"><a href="/user/<%= @user.id %>">Profile</a></div>
+          <div class="settings-button"><a href="/settings">Account Settings</a></div>
+        </div>
+      </div>
 
 <h1>Medivation</h1>
 <h2>Home</h2>
@@ -10,7 +23,7 @@
 <ul>
   <% @users.each do | user | %>
   <li>
-  <p><b><%= user.username %></b></p>
+  <p>•<%= user.username %></p>
     <% user.posts.each do | post | %>
     <p><em><%= post.title %></em></p>
     <p><%= post.content %></p>
@@ -19,3 +32,9 @@
   <% end %>
 
 </ul>
+
+
+   </div>
+
+  </body>
+</html>

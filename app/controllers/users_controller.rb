@@ -8,14 +8,13 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    params.each do | input |
-      if params.empty?
-        redirect '/signup'
-      end
-    end
     user = User.create(username: params[:username], email: params[:email], password: params[:password])
-    session[:user_id] = user.id
-    redirect '/home'
+     if user.valid?
+       session[:user_id] = user.id
+       redirect '/home'
+     else
+       redirect '/signup'
+     end
   end
 
   get '/login' do
