@@ -14,15 +14,10 @@ body {
   color: #555;
   background: #ecf0f3;
 }
-.main-logo {
-  background-image: url("/images/Medivation_Logo.png");
+.logo {
   display: block;
-  width: 250px;
-  height: 250px;
-  margin: auto;
-  background-position: center;
-  background-size: 250px;
-  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
 }
 .main-div {
   width: 700px;
