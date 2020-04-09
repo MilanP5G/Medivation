@@ -1,6 +1,5 @@
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 body {
   height: 100vh;
@@ -15,7 +14,6 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 10px;
   box-shadow: 13px 13px 20px #cbced1
 }
 .header a {
@@ -23,7 +21,7 @@ body {
   display: block;
   color: #034f84;
   text-align: center;
-  padding: 12px;
+  padding: 35px;
   margin-right: 12px;
   text-decoration: none;
   font-size: 18px;
@@ -31,25 +29,28 @@ body {
   border-radius: 4px;
 }
 .header img {
-  display: inline-flex;
+  display: inline-block;
   width: 100px;
   height: 100px;
   margin: left;
   background-size: 100px;
+  float: left;
 }
 .header a:hover {
   background-color: #034f84;
   color: #ecf0f3;
+  size: 30px 10px;
 }
 .header-right {
   float: right;
 }
 .header-center {
+  display: inline-block;
   float: center;
   color: #034f84;
   text-align: center;
-  padding: 12px;
-  margin-left: 645px;
+  padding: 35px;
+  margin-left: 545px;
   font-size: 40px;
   line-height: 25px;
   border-radius: 4px;
@@ -81,7 +82,7 @@ body {
   border-spacing: 1px;
   padding: 10px 10px 10px 10px;
   margin-top: 30px;
-  margin-left: 520px;
+  margin: auto;
   border-radius: 25px 25px 0 0;
   color: #ecf0f3;
   text-decoration: none;
