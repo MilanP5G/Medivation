@@ -23,7 +23,7 @@
         <ul>
          <% @users.each do | user | %>
          <li>
-          <p>• <a href="/user/<%= user.id %>"><%= user.username %></a></p>
+          <div class="name-link"><p><a href="/user/<%= user.id %>"><%= user.username %></a></p></div>
           <% user.posts.each do | post | %>
           <% if post == user.posts.last %>
            <p><em><%= post.title %></em></p>

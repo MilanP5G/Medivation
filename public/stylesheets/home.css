@@ -20,6 +20,7 @@ body {
 }
 .header a {
   float: left;
+  display: block;
   color: #034f84;
   text-align: center;
   padding: 12px;
@@ -48,7 +49,7 @@ body {
   color: #034f84;
   text-align: center;
   padding: 12px;
-  text-decoration: none;
+  margin: 0 auto;
   font-size: 40px;
   line-height: 25px;
   border-radius: 4px;
@@ -67,13 +68,15 @@ body {
   }
 }
 .home-box {
+  padding-top: 200px;
+}
+.name-link {
   width: 430px;
   height: 600px;
   padding: 35px 35px 35px 35px;
   border-radius: 40px;
-  margin-top: 30px;
-  background: #ecf0f3;
+  text-decoration: none;
+  background: #034f84;
   box-shadow: 13px 13px 20px #cbced1,
              -13px -13px 20px #ffffff;
-
 }
