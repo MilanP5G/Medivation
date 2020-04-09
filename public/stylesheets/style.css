@@ -15,10 +15,14 @@ body {
   background: #ecf0f3;
 }
 .logo {
-  background: url("/images/Medivation_Logo.png");
+  background-image: url("/images/Medivation_Logo.png");
+  display: block;
   width: 100px;
   height: 100px;
-  margin: 0 auto;
+  margin: auto;
+  background-position: center;
+  background-size: 100px;
+  background-repeat: no-repeat;
 }
 .login-div {
   width: 430px;

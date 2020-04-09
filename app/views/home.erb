@@ -22,16 +22,20 @@
       <div class="home-box">
         <ul>
          <% @users.each do | user | %>
+         <% if !user.posts.empty? %>
          <li>
-          <div class="name-link"><p><a href="/user/<%= user.id %>"><%= user.username %></a></p></div>
+             <a class="name-link" href="/user/<%= user.id %>"><%= user.username %></a>
           <% user.posts.each do | post | %>
           <% if post == user.posts.last %>
+          <div class="user-content">
            <p><em><%= post.title %></em></p>
             <p><%= post.content %></p>
+          </div>
          </li>
+             <% end %>
+             <% end %>
            <% end %>
           <% end %>
-        <% end %>
        </ul>
       </div>
 
