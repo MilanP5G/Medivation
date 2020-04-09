@@ -15,14 +15,9 @@ body {
   background: #ecf0f3;
 }
 .logo {
-  background-image: url("/images/Medivation_Logo.png");
   display: block;
-  width: 200px;
-  height: 200px;
-  margin: auto;
-  background-position: center;
-  background-size: 200px;
-  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
 }
 .login-div {
   width: 430px;
