@@ -72,7 +72,7 @@ body {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  padding-top: 100px;
+  padding-top: 110px;
 }
 .name-link {
   width: 400px;
@@ -81,7 +81,7 @@ body {
   border-collapse: separate;
   border-spacing: 1px;
   padding: 10px 10px 10px 10px;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-left: 520px;
   border-radius: 25px 25px 0 0;
   color: #ecf0f3;
@@ -98,6 +98,7 @@ body {
   border-collapse: separate;
   border-spacing: 1px;
   padding: 10px 10px 10px 10px;
+  margin-bottom: 15px;
   margin-left: 520px;
   border-radius: 0 0 25px 25px;
   color: black;
