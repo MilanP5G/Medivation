@@ -8,7 +8,7 @@
   <body>
     <div class="home-div">
       <div class="header">
-        <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+        <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
         <div class="header-center">HOME</div>
         <div class="header-right">
           <a class="compose-button" href="/compose">Compose</a>
@@ -24,11 +24,12 @@
          <% @users.each do | user | %>
          <% if !user.posts.empty? %>
          <li>
-             <a class="name-link" href="/user/<%= user.id %>"><%= user.username %></a>
+             <a class="name-link" href="/user/<%= user.id %>"><%= user.username.upcase %></a>
           <% user.posts.each do | post | %>
           <% if post == user.posts.last %>
           <div class="user-content">
-           <p><em><%= post.title %></em></p>
+           <div class=""><u><%= post.title %></u></div>
+           <br>
             <p><%= post.content %></p>
           </div>
          </li>

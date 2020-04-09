@@ -24,19 +24,19 @@ body {
   color: #034f84;
   text-align: center;
   padding: 12px;
+  margin-right: 12px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
 }
-/* .header home-logo {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 50px;
-} */
+.header img {
+  display: inline-flex;
+  width: 100px;
+  height: 100px;
+  margin: left;
+  background-size: 100px;
+}
 .header a:hover {
   background-color: #034f84;
   color: #ecf0f3;
@@ -45,12 +45,11 @@ body {
   float: right;
 }
 .header-center {
-  display: inline-block;
   float: center;
   color: #034f84;
   text-align: center;
   padding: 12px;
-  margin: 0 auto;
+  margin-left: 645px;
   font-size: 40px;
   line-height: 25px;
   border-radius: 4px;
@@ -72,7 +71,7 @@ body {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  padding-top: 140px;
+  padding-top: 100px;
 }
 .name-link {
   width: 400px;
