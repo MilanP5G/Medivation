@@ -4,7 +4,11 @@
 
 <h1><%= @user.username %></h1>
 
+<% if Helpers.current_user(session) == @user%>
+
 <h2>My posts</h2>
+
+<% end %>
 
 <a href="/compose"><button">Compose</button></a>
 
@@ -15,12 +19,16 @@
   <p><%= post.content %></p>
   </li>
 
+  <% if Helpers.current_user(session) == @user %>
+
   <a href="/posts/<%= post.id %>/edit"><button id="edit">Edit Post</button></a>
 
   <form action="/posts/<%= post.id %>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <input id="delete" type="submit" value="Delete Post">
   </form>
+
+  <% end %>
 
   <% end %>
 </ul>

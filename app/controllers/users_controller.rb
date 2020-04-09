@@ -61,13 +61,13 @@ class UsersController < ApplicationController
 
 
  get '/user/:id' do
-   if Helpers.logged_in?(session) && User.find_by(id: params["id"])
+   if !Helpers.current_user(session)
+     redirect '/'
+   end
+   Helpers.current_user(session) && User.find_by(id: params["id"])
     @user = User.find_by(id: params["id"])
     @post = Post.find_by(id: params["id"])
     @posts = @user.posts
-    else
-      redirect '/'
-    end
     erb :'/users/show'
   end
 
