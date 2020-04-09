@@ -8,32 +8,33 @@
   <body>
     <div class="home-div">
       <div class="header">
-        <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+        <!-- <div class="home-logo"><img src="/images/Medivation_Logo.png"></div> -->
+        <div class="header-center">HOME</div>
         <div class="header-right">
-          <div class="profile-button"><a href="/user/<%= @user.id %>">Profile</a></div>
-          <div class="settings-button"><a href="/settings">Account Settings</a></div>
+          <a class="compose-button" href="/compose">Compose</a>
+          <a class="profile-button" href="/user/<%= @user.id %>">Profile</a>
+          <a class="settings-button" href="/settings">Account Settings</a>
         </div>
       </div>
 
-<h1>Medivation</h1>
-<h2>Home</h2>
 
-<a href="/compose"><button>Compose</button></a>
 
-<ul>
-  <% @users.each do | user | %>
-  <li>
-  <p>• <a href="/user/<%= user.id %>"><%= user.username %></a></p>
-    <% user.posts.each do | post | %>
-     <% if post == user.posts.last %>
-    <p><em><%= post.title %></em></p>
-    <p><%= post.content %></p>
-  </li>
-  <% end %>
-  <% end %>
-  <% end %>
+      <div class="home-box">
+        <ul>
+         <% @users.each do | user | %>
+         <li>
+          <p>• <a href="/user/<%= user.id %>"><%= user.username %></a></p>
+          <% user.posts.each do | post | %>
+          <% if post == user.posts.last %>
+           <p><em><%= post.title %></em></p>
+            <p><%= post.content %></p>
+         </li>
+           <% end %>
+          <% end %>
+        <% end %>
+       </ul>
+      </div>
 
-</ul>
 
 
    </div>

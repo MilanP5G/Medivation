@@ -12,6 +12,9 @@ body {
 .header {
   overflow: hidden;
   background-color: #ecf0f3;
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 20px 10px;
   box-shadow: 13px 13px 20px #cbced1
 }
@@ -25,20 +28,30 @@ body {
   line-height: 25px;
   border-radius: 4px;
 }
-.header a.home-logo {
+/* .header home-logo {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   height: 50px;
   width: 50px;
-}
+} */
 .header a:hover {
   background-color: #034f84;
   color: #ecf0f3;
 }
 .header-right {
   float: right;
+}
+.header-center {
+  float: center;
+  color: #034f84;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 25px;
+  border-radius: 4px;
 }
 @media screen and (max-width: 500px) {
   .header a {
@@ -49,4 +62,18 @@ body {
   .header-right {
     float: none;
   }
+  .header-center {
+    float: none;
+  }
+}
+.home-box {
+  width: 430px;
+  height: 600px;
+  padding: 35px 35px 35px 35px;
+  border-radius: 40px;
+  margin-top: 30px;
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1,
+             -13px -13px 20px #ffffff;
+
 }
