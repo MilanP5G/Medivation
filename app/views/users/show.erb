@@ -1,34 +1,53 @@
-<a href="/home">Home</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+  </head>
+  <body>
+    <div class="home-div">
+      <div class="header">
+        <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+        <div class="header-right">
+          <a class="home-button" href="/home">HOME</a>
+          <a class="profile-button" href="/user/<%= @user.id %>">PROFILE</a>
+          <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
+        </div>
+      </div>
 
-<a href="/settings">Account settings</a>
+        <h1><%= @user.username %></h1>
 
-<h1><%= @user.username %></h1>
+           <% if Helpers.current_user(session) == @user%>
 
-<% if Helpers.current_user(session) == @user%>
+            <h2>My posts</h2>
 
-<h2>My posts</h2>
+           <% end %>
 
-<% end %>
+          <!-- <a href="/compose"><button">Compose</button></a> -->
 
-<a href="/compose"><button">Compose</button></a>
+            <ul>
+             <% @posts.each do | post | %>
+             <li>
+             <u><%= post.title.upcase %></u>
+                <%= post.content %>
+              </li>
 
-<ul>
-  <% @posts.each do | post | %>
-  <li>
-  <p><b><%= post.title %></b></p>
-  <p><%= post.content %></p>
-  </li>
+             <% if Helpers.current_user(session) == @user %>
 
-  <% if Helpers.current_user(session) == @user %>
+               <a href="/posts/<%= post.id %>/edit"><button id="edit">Edit Post</button></a>
 
-  <a href="/posts/<%= post.id %>/edit"><button id="edit">Edit Post</button></a>
+               <form action="/posts/<%= post.id %>/delete" method="post">
+               <input type="hidden" name="_method" value="delete">
+               <input id="delete" type="submit" value="Delete Post">
+               </form>
 
-  <form action="/posts/<%= post.id %>/delete" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input id="delete" type="submit" value="Delete Post">
-  </form>
+             <% end %>
 
-  <% end %>
+           <% end %>
+         </ul>
 
-  <% end %>
-</ul>
+       </div>
+
+      </body>
+    </html>
