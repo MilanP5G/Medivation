@@ -61,7 +61,23 @@ body {
   vertical-align: middle;
   padding-top: 110px;
   margin-left: 510px;
-  padding-left: 0;
+}
+.profile-username {
+  font-size: 50px;
+  color: #034f84;
+  margin-right: 330px;
+}
+.my-posts {
+  font-size: 30px;
+  color: #b1b1b1;
+  margin-right: 330px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+.name-mypost {
+  position: sticky;
+  top: 0;
+  text-align: center;
 }
 .post-title {
   width: 400px;
@@ -69,8 +85,8 @@ body {
   display: table;
   border-collapse: separate;
   border-spacing: 1px;
+  margin-top: 30px;
   padding: 10px 10px 10px 10px;
-  margin-top: 15px;
   border-radius: 25px 25px 0 0;
   color: #ecf0f3;
   text-decoration: none;
@@ -86,7 +102,7 @@ body {
   border-collapse: separate;
   border-spacing: 1px;
   padding: 10px 10px 10px 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-radius: 0 0 25px 25px;
   color: black;
   text-decoration: none;
@@ -101,7 +117,7 @@ body {
   text-align: center;
   padding: 10px;
   margin-right: 12px;
-  margin-left: 85px;
+  margin-left: 90px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
@@ -126,6 +142,7 @@ body {
 }
 .edit-post, .delete-post {
   display: inline-block;
+  margin-bottom: 30px;
 }
 #delete {
   text-decoration: none;

@@ -18,13 +18,14 @@
       </div>
 
       <div class="profile-box">
-        <div class="profile-username"><%= @user.username %></div>
-
+        <div class="name-mypost">
+          <div class="profile-username"><%= @user.username.upcase %></div>
            <% if Helpers.current_user(session) == @user%>
-
-            <div class="my-posts">My posts</div>
-
+            <div class="my-posts">MY POSTS</div>
+           <% else %>
+           <div class="my-posts">POSTS</div>
            <% end %>
+           </div>
 
              <% @posts.each do | post | %>
              <div class="post-title"><u><%= post.title.upcase %></u></div>
