@@ -95,32 +95,34 @@ body {
   box-shadow: 13px 13px 20px #cbced1;
 }
 .edit-post {
-  width: 170px;
-  height: 10px;
-  border-collapse: separate;
-  border-spacing: 1px;
-  margin-left: 8px;
-  padding: 15px 15px 15px 15px;
-  border-radius: 25px 0 0 25px;
-  color: #ecf0f3;
-  text-decoration: none;
+  float: left;
+  display: block;
+  color: #034f84;
   text-align: center;
-  background: #034f84;
-  box-shadow: 13px 13px 20px #cbced1,
-             -13px -13px 20px #ffffff;
+  padding: 10px;
+  margin-right: 12px;
+  margin-left: 85px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.edit-post:hover {
+  background-color: #034f84;
+  color: #ecf0f3;
+  size: 30px 10px;
 }
 .delete-post {
-  width: 170px;
-  height: 10px;
-  border-collapse: separate;
-  border-spacing: 1px;
-  padding: 15px 15px 15px 15px;
-  border-radius: 0 25px 25px 0;
-  color: #ecf0f3;
-  text-decoration: none;
+  float: left;
+  display: block;
+  background-color: #ca171e;
   text-align: center;
-  background: #ca171e;
-  box-shadow: 13px 13px 20px #cbced1;
+  padding: 10px;
+  margin-right: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 }
 .edit-post, .delete-post {
   display: inline-block;
