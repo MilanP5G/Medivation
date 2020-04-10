@@ -29,8 +29,8 @@
             <ul>
              <% @posts.each do | post | %>
              <li>
-             <u><%= post.title.upcase %></u>
-                <%= post.content %>
+             <div class="post-title"><u><%= post.title.upcase %></u></div>
+                <div class="user-content"><%= post.content %></div>
               </li>
 
              <% if Helpers.current_user(session) == @user %>
