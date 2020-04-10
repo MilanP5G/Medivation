@@ -17,13 +17,9 @@
         </div>
       </div>
 
-
-
       <div class="home-box">
-        <ul>
          <% @users.each do | user | %>
          <% if !user.posts.empty? %>
-         <li>
              <a class="name-link" href="/user/<%= user.id %>"><%= user.username.upcase %></a>
           <% user.posts.each do | post | %>
           <% if post == user.posts.last %>
@@ -32,16 +28,12 @@
            <br>
             <p><%= post.content %></p>
           </div>
-         </li>
              <% end %>
              <% end %>
            <% end %>
           <% end %>
-       </ul>
-
 
     </div>
    </div>
-
   </body>
 </html>
