@@ -16,8 +16,6 @@
       </div>
     </div>
     <div class="settings-div">
-
-
       <div class="setting-box">
         <div class="profile-username"><%= @user.username.upcase %></div>
           <div class="title">ACCOUNT SETTINGS</div>
@@ -33,14 +31,12 @@
                 <form href="/settings" method="post">
                 <input type="hidden" name="id" value="<%=@user.id%>">
                 <input type="hidden" name="_method" value="delete">
-                <button class="delete-button"><input id="delete" type="submit" value="Delete Profile"></button> 
+                <button class="delete-button"><input id="delete" type="submit" value="Delete Profile"></button>
                 </form>
 
           <% end %>
 
-      </div>
-
-
+          </div>
         </div>
       </body>
     </html>
