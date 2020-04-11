@@ -1,17 +1,13 @@
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-  margin: 0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  background: #ecf0f3;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  display: flex;
-  justify-content: center;
-  color: #555;
-  background: #ecf0f3;
 }
 .header {
   overflow: hidden;
@@ -60,10 +56,12 @@ body {
     float: none;
   }
 }
-.home-box {
+.home-div {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
+  padding-top: 110px;
+  margin-left: 510px;
 }
 .name-link {
   width: 400px;

@@ -6,17 +6,16 @@
     <link rel="stylesheet" href="/stylesheets/home.css">
   </head>
   <body>
-    <div class="home-div">
-      <div class="header">
-        <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
-        <div class="header-right">
-          <a class="home-button" href="/home">HOME</a>
-          <a class="compose-button" href="/compose">COMPOSE</a>
-          <a class="profile-button" href="/user/<%= @user.id %>">PROFILE</a>
-          <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
-        </div>
+    <div class="header">
+      <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+      <div class="header-right">
+        <a class="home-button" href="/home">HOME</a>
+        <a class="compose-button" href="/compose">COMPOSE</a>
+        <a class="profile-button" href="/user/<%= @user.id %>">PROFILE</a>
+        <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
       </div>
-
+    </div>
+    <div class="home-div"
       <div class="home-box">
          <% @users.each do | user | %>
          <% if !user.posts.empty? %>

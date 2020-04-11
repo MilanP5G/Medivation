@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     if !Helpers.logged_in?(session)
       redirect '/'
     end
+    @user = Helpers.current_user(session)
     erb :'/posts/compose'
   end
 
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
     if !Helpers.logged_in?(session) || @post.user != Helpers.current_user(session)
       redirect '/'
     end
+    @user = Helpers.current_user(session)
     erb :'/posts/edit'
   end
 

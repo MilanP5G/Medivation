@@ -1,10 +1,35 @@
-<h2>Edit Post</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/compose.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+      <div class="header-right">
+        <a class="home-button" href="/home">HOME</a>
+        <a class="compose-button" href="/compose">COMPOSE</a>
+        <a class="profile-button" href="/user/<%= Helpers.current_user(session).id %>">PROFILE</a>
+        <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
+      </div>
+    </div>
+
+    <div class="compose-box">
+      <br></br>
+    <div class="profile-username"><%= @user.username.upcase %></div>
+    <div class="compose">EDIT POST</div>
 
 <form action="/posts/<%=@post.id%>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <input type="text" name="post[title]" value="<%=@post.title%>">
+  <div class="title-input"><input type="text" name="post[title]" value="<%=@post.title%>"></div>
   <br></br>
-  <textarea type="text" name="post[content]" value="<%=@post.content%>" rows="20" cols="60"></textarea>
+  <textarea class="content-input" type="text" name="post[content]" value="<%=@post.content%>" rows="10" cols="50"></textarea>
   <br></br>
-  <input type="submit" value="Update Post">
+  <input class="post-button" type="submit" value="UPDATE">
 </form>
+</div>
+
+</body>
+</html>

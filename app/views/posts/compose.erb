@@ -16,10 +16,18 @@
       </div>
     </div>
 
-<form action="/compose" method="post">
-  <input type="text" name="title" id="title" placeholder="Title" required>
-  <br></br>
-  <textarea name="content" placeholder="Inspire the world..." required rows="20" cols="60"></textarea>
-  <br></br>
-  <input type="submit" value="Post">
-</form>
+    <div class="fields">
+    <div class="compose-box">
+      <div class="profile-username"><%= @user.username.upcase %></div>
+      <div class="compose">NEW POST</div>
+      <form action="/compose" method="post">
+       <div class="title-input"><input type="text" name="title" id="title" placeholder="Title" required></div>
+       <br></br>
+       <textarea class="content-input" type="text" name="content"  placeholder="Inspire the world..." rows="10" cols="50" required></textarea>
+       <br></br>
+       <input class="post-button" type="submit" value="POST">
+      </form>
+    </div>
+
+  </body>
+</html>
