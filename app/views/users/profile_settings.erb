@@ -3,34 +3,44 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/settings.css">
+    <link rel="stylesheet" href="/stylesheets/setting.css">
   </head>
   <body>
+    <div class="header">
+      <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+      <div class="header-right">
+        <a class="home-button" href="/home">HOME</a>
+        <a class="compose-button" href="/compose">COMPOSE</a>
+        <a class="profile-button" href="/user/<%= Helpers.current_user(session).id %>">PROFILE</a>
+        <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
+      </div>
+    </div>
     <div class="settings-div">
-      <div class="settings-logo"></div>
-    <div class="title">LOGIN</div>
-    <div class="fields">
 
-      <a href="/home">Home</a>
 
-       <a href="/user/<%= @user.id %>">Profile</a>
+      <div class="setting-box">
+        <div class="profile-username"><%= @user.username.upcase %></div>
+          <div class="title">ACCOUNT SETTINGS</div>
+          <br></<br>
+          <div class="posts">POSTS: <%= @user.posts.count %></div>
 
-       <h1>Profile Settings</h1>
+          <% if Helpers.current_user(session) == @user %>
 
-       <h2><%= @user.username %></h2>
+            <a href="/users/<%= @user.id %>/edit"><button class="edit-profile">Edit Profile</button></a><br>
 
-        <h3>Posts: <%= @user.posts.count %></h3>
+              <a href="/logout"><button class="logout-button">Log out</button></a><br>
 
-        <% if Helpers.current_user(session) == @user %>
+                <form href="/settings" method="post">
+                <input type="hidden" name="id" value="<%=@user.id%>">
+                <input type="hidden" name="_method" value="delete">
+                <button class="delete-button"><input id="delete" type="submit" value="Delete Profile"></button> 
+                </form>
 
-          <a href="/users/<%= @user.id %>/edit"><button id="edit">Edit Profile</button></a><br>
+          <% end %>
 
-            <a href="/logout"><button id="logout">Log out</button></a><br>
+      </div>
 
-              <form href="/settings" method="post">
-              <input type="hidden" name="id" value="<%=@user.id%>">
-              <input type="hidden" name="_method" value="delete">
-              <input id="delete" type="submit" value="Delete Profile">
-              </form>
 
-        <% end %>
+        </div>
+      </body>
+    </html>

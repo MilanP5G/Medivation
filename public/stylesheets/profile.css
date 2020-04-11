@@ -65,19 +65,21 @@ body {
 .profile-username {
   font-size: 50px;
   color: #034f84;
-  margin-right: 330px;
+  margin: auto;
+  padding-left: 15px;
 }
 .my-posts {
   font-size: 30px;
   color: #b1b1b1;
-  margin-right: 330px;
-  margin-bottom: 20px;
   letter-spacing: 3px;
+  margin: auto;
+  padding-left: 15px;
 }
 .name-mypost {
-  position: sticky;
+  /* position: sticky;
   top: 0;
-  text-align: center;
+  text-align: center; */
+  margin: auto;
 }
 .post-title {
   width: 400px;

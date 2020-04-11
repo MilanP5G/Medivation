@@ -12,7 +12,7 @@
         <div class="header-right">
           <a class="home-button" href="/home">HOME</a>
           <a class="compose-button" href="/compose">COMPOSE</a>
-          <a class="profile-button" href="/user/<%= @user.id %>">PROFILE</a>
+          <a class="profile-button" href="/user/<%= Helpers.current_user(session).id %>">PROFILE</a>
           <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
         </div>
       </div>

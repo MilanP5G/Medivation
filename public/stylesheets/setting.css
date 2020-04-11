@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  background: #ecf0f3;
+}
+.header {
+  overflow: hidden;
+  background-color: #ecf0f3;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 13px 13px 20px #cbced1
+}
+.header a {
+  float: left;
+  display: block;
+  color: #034f84;
+  text-align: center;
+  padding: 10px;
+  margin-right: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: center;
+  background-size: 100px;
+  float: left;
+}
+.header a:hover {
+  background-color: #034f84;
+  color: #ecf0f3;
+  size: 30px 10px;
+}
+.header-right {
+  float: right;
+  margin-top: 25px;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+.settings-div {
+  width: 430px;
+  height: 500px;
+  margin-top: 100px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 40px;
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1,
+             -13px -13px 20px #ffffff;
+}
+.profile-username {
+  font-size: 50px;
+  color: #034f84;
+  text-align: center;
+}
+.title {
+  font-size: 20px;
+  text-align: center;
+}
+.posts {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+.edit-profile {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  height: 60px;
+  border-radius: 30px;
+  margin-left: 58px;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  background: #034f84;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  background-color: #ecf0f3;
+  color: #034f84;
+  border: 2px solid #034f84;
+}
+.edit-profile:hover {
+  background: #92a8d1
+}
+.edit-profile:active {
+  background: #36486b
+}
+.logout-button, .delete-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  height: 60px;
+  margin-left: 58px;
+  margin-top: 30px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  text-align: center;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+.logout-button {
+  background: #034f84;
+}
+.logout-button:hover {
+  background: #92a8d1
+}
+.logout-button:active {
+  background: #36486b
+}
+.delete-button {
+  background: #ca171e
+}
+.delete-button:hover {
+  background: #ed6066
+}
+delete-button:active {
+  background: #36486b
+}
+#delete {
+  text-decoration: none;
+  color: #ecf0f3;
+  background: #ca171e;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
