@@ -105,24 +105,20 @@ textarea {
   box-shadow: inset 8px 8px 8px #cbced1,
               inset -8px -8px 8px #ffffff;
 }
-.post-button, {
+#update {
   float: left;
   display: block;
   color: #034f84;
-  text-align: center;
-  padding: 10px;
-  margin-left: 205px;
-  background: none;
+  color: #034f84;
+  background: #ecf0f3;
   border: none;
-  text-decoration: none;
-  font-size: 30px;
+  margin-left: 150px;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  line-height: 25px;
-  border-radius: 4px;
+  font-size: 30px;
 }
-.post-button:hover {
+#update:hover {
   background-color: #034f84;
   color: #ecf0f3;
-  size: 30px 10px;
+  border-radius: 5px;
 }
