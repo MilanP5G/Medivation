@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
   height: 100vh;
@@ -7,9 +8,6 @@ body {
   background: #ecf0f3;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #555;
   background: #ecf0f3;
 }
@@ -59,14 +57,13 @@ body {
     float: none;
   }
 }
-.profile-box {
-  width: auto;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 110px;
+.home-div {
+  width: 420px;
   margin-left: 510px;
-  padding-left: 0;
+  margin-top: 120px;
+}
+.profile-box {
+  width: 420px;
 }
 .profile-username {
   font-size: 50px;
@@ -80,10 +77,9 @@ body {
   letter-spacing: 3px;
   text-align: center;
 }
-.profile-username, .my-posts {
+.name-mypost {
   position: sticky;
   top: 0;
-  justify-content: center;
 }
 .post-title {
   width: 400px;
