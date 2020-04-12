@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="/stylesheets/profile.css">
   </head>
   <body>
-    <div class="header">
-      <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
-      <div class="header-right">
-        <a class="home-button" href="/home">HOME</a>
-        <a class="compose-button" href="/compose">COMPOSE</a>
-        <a class="profile-button" href="/user/<%= Helpers.current_user(session).id %>">PROFILE</a>
-        <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
-      </div>
-    </div>
     <div class="home-div">
+      <div class="header">
+        <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+        <div class="header-right">
+          <a class="home-button" href="/home">HOME</a>
+          <a class="compose-button" href="/compose">COMPOSE</a>
+          <a class="profile-button" href="/user/<%= Helpers.current_user(session).id %>">PROFILE</a>
+          <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
+        </div>
+      </div>
       <div class="profile-box">
         <div class="name-mypost">
           <div class="profile-username"><%= @user.username.upcase %></div>

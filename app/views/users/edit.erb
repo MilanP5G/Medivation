@@ -1,19 +1,38 @@
-<a href="/home">Home</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/edit-profile.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="home-logo"><img src="/images/Medivation_Logo.png"></div>
+      <div class="header-right">
+        <a class="home-button" href="/home">HOME</a>
+        <a class="compose-button" href="/compose">COMPOSE</a>
+        <a class="profile-button" href="/user/<%= Helpers.current_user(session).id %>">PROFILE</a>
+        <a class="settings-button" href="/settings">ACCOUNT SETTINGS</a>
+      </div>
+    </div>
+    <div class="edit-div">
+      <div class="profile-username"><%= @user.username.upcase %></div>
+      <div class="compose">EDIT PROFILE</div>
+      <div class="fields">
 
-<a href="/user/<%= @user.id %>">Profile</a>
+     <form action="/users/<%=@user.id%>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <label class="username"> USERNAME: </label><br>
+      <div class="username-input"><input type="text" name="user[username]" value="<%=@user.username%>"></div>
+      <label class="email"> EMAIL: </label><br>
+      <div class="email-input"><input type="text" name="user[email]" value="<%=@user.email%>"></div>
+      <label class="password"> PASSWORD: </label><br>
+      <div class="password-input"><input type="password" name="user[password]" value="<%=@user.password%>" required></div>
+      <input id="update" type="submit" value="UPDATE PROFILE">
+     </form>
 
-<h2>Edit Profile</h2>
+     </div>
+   </div>
 
-<form action="/users/<%=@user.id%>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <label> Username: </label>
-  <input type="text" name="user[username]" value="<%=@user.username%>">
-  <br></br>
-  <label> Email: </label>
-  <input type="text" name="user[email]" value="<%=@user.email%>">
-  <br></br>
-  <label> Password: </label>
-  <input type="password" name="user[password]" value="<%=@user.password%>">
-  <br></br>
-  <input type="submit" value="Update Profile">
-</form>
+ </body>
+</html>
