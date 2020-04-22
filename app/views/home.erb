@@ -16,6 +16,11 @@
       </div>
     </div>
     <div class="home-div"
+
+    <form action="/users/search" method="post">
+      <input name="username" type="text">
+      <input type="submit" value="Search">
+    </form>
       <div class="home-box">
          <% @users.each do | user | %>
          <% if !user.posts.empty? %>

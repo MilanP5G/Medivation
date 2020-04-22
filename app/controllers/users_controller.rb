@@ -43,6 +43,15 @@ class UsersController < ApplicationController
     erb :home
   end
 
+  post '/users/search' do
+    user = User.find_by(username: params[:username])
+    if user
+      redirect "/user/#{user.id}"
+    else
+      redirect '/home'
+    end
+  end
+
   get '/settings' do
     if !Helpers.logged_in?(session)
       redirect '/login'

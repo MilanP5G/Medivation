@@ -9,18 +9,20 @@ class PostsController < ApplicationController
   end
 
   post '/compose' do
-    params.each do | input |
-      if params.empty?
-        redirect '/compose'
-      end
-    end
+    # params.each do | input |
+    #   if params.empty?
+    #     redirect '/compose'
+    #   end
+    # end
     post = Post.create(title: params[:title], content: params[:content])
     if post.valid?
       user = Helpers.current_user(session)
       post.user = user
       post.save
      redirect "/user/#{user.id}"
-    end
+   else
+     redirect '/compose'
+  end
   end
 
   get '/posts/:id/edit' do

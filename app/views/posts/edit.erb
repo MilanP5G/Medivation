@@ -25,7 +25,7 @@
   <input type="hidden" name="_method" value="patch">
   <div class="title-input"><input type="text" name="post[title]" value="<%=@post.title%>"></div>
   <br></br>
-  <textarea class="content-input" type="text" name="post[content]" value="<%=@post.content%>" rows="10" cols="50"></textarea>
+  <textarea class="content-input" type="text" name="post[content]" rows="10" cols="50"><%=@post.content%></textarea>
   <br></br>
   <input id="update" type="submit" value="UPDATE POST">
 </form>
